@@ -37,6 +37,7 @@ final class ScreenshotPreventingHostingViewController<Content: View>: UIViewCont
 
     private func setupUI() {
         view.addSubview(wrapperView)
+        view.backgroundColor = .clear
         wrapperView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             wrapperView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -46,6 +47,7 @@ final class ScreenshotPreventingHostingViewController<Content: View>: UIViewCont
         ])
 
         let hostVC = UIHostingController(rootView: content())
+        hostVC.view.backgroundColor = .clear
         hostVC.view.translatesAutoresizingMaskIntoConstraints = false
 
         addChild(hostVC)
